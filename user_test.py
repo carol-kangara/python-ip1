@@ -1,6 +1,6 @@
 class User:
     '''
-    This is a class that generates new instances
+    This is a class that generates new instances of  account log in
     '''
     def __init__(self,user_name,password):
         '''

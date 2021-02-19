@@ -45,6 +45,18 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_credentials()
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+    def test_find_credentials_by_account_name(self):
+        '''
+        This is a test  to check if we can find credential using
+        account name and display information
+        ''' 
+        self.new_credentials.save_credentials()
+        test_credentials=Credentials("instagram", "ckas", "!#$@*@)__+(*&*^%!")
+        self.new_credentials.save_credentials() 
+
+        found_credentials=Credentials.find_by_account_name("instagram")
+
+        self.assertEqual(found_credentials.account_user_name,test_credentials.account_user_name) 
 
 
 

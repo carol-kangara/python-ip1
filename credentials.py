@@ -5,7 +5,7 @@ class Credentials:
     credentials_list=[] #empty account list
     def save_credentials():
         '''
-        This i a function for saving credentials
+        This i a method for saving credentials
         '''
     Credentials.credentials_list.append(self)
     def __init__(self,account_name,account_user_name,account_password):

@@ -66,6 +66,11 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_credentials()
         credentials_exists=Credentials.credentials_exist("intagram")
         self.assertTrue(credentials_exists)
+    def test_display_all_credentials(self):
+        '''
+        This method returns alist of the accounts and their credentials
+        '''
+        self.assertTrue(Credentials.display_credentials(),Credentials.credentials_list)    
 
 if __name__ == '__main__':
     unittest.main()

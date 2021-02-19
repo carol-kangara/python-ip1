@@ -32,7 +32,13 @@ class Credentials:
             if credentials.account_name==account_name:
                 return True
 
-        return False           
+        return False 
+    @classmethod
+    def display_credentials:
+        '''
+        method that returns credentias list
+        '''
+        return cls.credential_list              
     def __init__(self,account_name,account_user_name,account_password):
         '''
         we have created 4 arguments,the first argument is self.

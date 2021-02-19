@@ -9,10 +9,19 @@ class Credentials:
         '''
         Credentials.credentials_list.append(self)
     def delete_credentials(self):
-         '''
-        This is a method for deleting an aaccount that is no longer used
+        '''
+        This is a method for deleting an account that is no longer used
         '''  
-
+        Credentials.credentials_list.remove(self)
+    @classmethod
+    def find_by_account_name(cls,account_name): 
+        '''
+        This is a method for finding an account using the account name
+        which now displays credentials details that matches the account
+        ''' 
+        for credentials in cls.credentials_list:
+            if credentials.account_name==account_name:
+                return credentials
     def __init__(self,account_name,account_user_name,account_password):
         '''
         we have created 4 arguments,the first argument is self.

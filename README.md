@@ -17,6 +17,10 @@ This is a password management system that saves credentials of other accounts,i.
 
 ## Technologies Used
 * python
+## Support and contact details
+you can reach me using the following:
+* phone:0101234568
+* email:me@mail.com
 
 
 

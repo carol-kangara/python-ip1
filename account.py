@@ -64,7 +64,7 @@ def main():
                 print('confirm your password')
                 confirm_password = input()
             else:
-                print(f"Congratulations (created_user_name),account sucessfully created")
+                print(f"Congratulations {created_user_name},account sucessfully created")
                 print('\n')
                 print("You can now log in")
                 print("username")
@@ -78,8 +78,40 @@ def main():
                 print("your password")
                 entered_password=input()
             else:
-                print(f"welcome:(entered-username) to you account")
+                print(f"welcome:{entered_username} to you account,please choose the following short_code to add an accounts and their password")
                 print('\n') 
+                while True:
+					print('Navigation codes: \n ac-add an account \n dc-display credentials \n cp-copy pasword and username \n ex-Exit')
+					short_code = input('Enter a choice: ').lower().strip()
+                    if short_code == 'ex':
+						print(f'Goodbye {user_name}')
+						break
+					elif short_code == 'ac':
+						print('Enter your credential details:')
+						site_name = input('Enter the account\'s account-name- ').strip()
+						account_name = input('Enter your account\'s user-name - ').strip()
+                        print('\n')
+						while True:
+							print('Please choose an option for entering a password_choice: \n ep-enter existing password \n gp-generate a password \n ex-exit')
+							password_choice = input('Enter an option: ').lower().strip()
+							print('\n')
+							if password_choice == 'ep':
+								print(" ")
+								password = input('Enter your password: ').strip()
+								break
+							elif password_choice == 'gp':
+								password = generate_password()
+								break
+							elif password_choice == 'ex':
+								break
+                        else:
+                            print("wrong choice please try again")
+                            save_credentials(create_credentials(account_name,account_user_name,account_password))
+						    print(f'Credentials Created: Account Name: {account_name} -Account User Name: {account_user_name}- Password: {account_password}')    
+                    elif short_code =='dc':
+
+
+					
         elif short_code =='l':          
             print("welcome")
             print("enter username")               

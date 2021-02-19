@@ -56,6 +56,13 @@ def main():
 
             print('confirm password')
             confirm_password = input()
+        elif short_code =='l':          
+            print("welcome")
+            print(" username")
+            entered_username= input()
+            print("enter your password")
+            entered_password=input()
+
 
             while confirm_password != created_user_password:
                 print("password did not match,")
@@ -109,9 +116,20 @@ def main():
                             save_credentials(create_credentials(account_name,account_user_name,account_password))
 						    print(f'Credentials Created: Account Name: {account_name} -Account User Name: {account_user_name}- Password: {account_password}')    
                     elif short_code =='dc':
-
-
-					
-        elif short_code =='l':          
-            print("welcome")
-            print("enter username")               
+                        print(' ')
+						if display_credentials(account_name):
+							print('Here is a list of all your credentials')
+							print(' ')
+							for credential in display_credentials(account_name):
+                                print(f' Account Name: {Credentials.account_name} -Account User Name: {Credentials.account_user_name}- Password: {Credentials.account_password}')
+							print('/n')	
+						else:
+							print("There are no credentials,please add")
+                            print('/n')
+                    elif short_code=="cp":
+						account_wanted = input('Please enter the account name: ')
+						copy_credentials(account_wanted)
+						print('')
+					else:
+						print(' Try again.')				
+                       

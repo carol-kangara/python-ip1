@@ -36,11 +36,15 @@ class TestCredentials(unittest.TestCase):
         test_credentials=Credentials("instagram", "ckas", "!#$@*@)__+(*&*^%!")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)
-    # def test delete_credentials():
-    #     '''
-    #     This is a test  if we can removed the accounts we no longer need
-    #     '''
-    #     self.new_credentials
+    def test delete_credentials():
+        '''
+        This is a test  if we can removed the accounts we no longer need
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials=Credentials("instagram", "ckas", "!#$@*@)__+(*&*^%!")
+        self.new_credentials.save_credentials()
+        self.new_credentials.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 
 
